@@ -49,6 +49,6 @@ class UserController extends Controller
 
         $access_token = JWT::encode($user->toArray(), 'secret', 'HS256');
         $user->access_token = $access_token;
-        return response()->json($access_token);
+        return response()->json($user);
     }
 }
