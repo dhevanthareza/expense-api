@@ -35,7 +35,6 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        dd($request->header('Authorization'));
         if ($this->auth->guard($guard)->guest()) {
             return response()->json(['message' => "Unauthorized"], 200);
         }
