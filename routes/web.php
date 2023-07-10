@@ -24,5 +24,6 @@ $router->group(['middleware' => 'auth', 'prefix' => 'expense'], function () use 
     $router->get('/{expense_id}', 'ExpenseController@get');
     $router->post('/', 'ExpenseController@store');
     $router->put('/{expense_id}', 'ExpenseController@update');
+    $router->patch('/{expense_id}', 'ExpenseController@update');
     $router->delete('/{expense_id}', 'ExpenseController@delete');
 });
