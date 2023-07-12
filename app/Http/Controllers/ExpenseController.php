@@ -12,7 +12,7 @@ class ExpenseController extends Controller
     {
         $user = Auth::user();
 
-        $expenses = Expense::where('user_id', $user->id)->get();
+        $expenses = Expense::where('user_id', $user->id)->orderBy('id', 'DESC')->get();
 
         return response()->json($expenses);
     }

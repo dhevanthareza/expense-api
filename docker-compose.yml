@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  php-apache:
+    container_name: expense-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4001:80
+    volumes:
+      - ./:/var/www/html/
+      - ./apache/conf/default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./apache/logs:/var/log/apache2
